@@ -1,0 +1,158 @@
+<!--Version améliorée-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        *
+        {
+            font-family: monospace;
+            text-align: center;
+        }
+        body {
+            background-color: rgb(248, 187, 143);
+        }
+        li {
+          display: inline;
+          font-size: 21px;
+        }
+        h1,img,nav{
+            align-items: center;
+            display:inline-block;
+        }
+        header img {
+            transition: transform 0.5s;
+        }
+        header img:hover {
+            transform: rotateY(180deg);
+        }
+
+        .menu-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .menu-cards div {
+            width: 300px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-cards img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: auto;
+        }
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img 
+        width="60"
+        src="https://png.pngtree.com/png-clipart/20231103/original/pngtree-cartoon-winter-house-vector-image-of-the-brown-wooden-christmas-house-png-image_13503065.png"
+        alt="Cozy chalet, logo restaurant"
+        id="header-img">
+        <h1>Chez Tati</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <div id="menu">
+            <h2 text-align="center">Menu</h2>
+            <section class="menu-cards">
+                <div class="card">
+                    <article>
+                        <h3><u>Fondue</u></h3>
+                        <figure>
+                            <img 
+                            src="https://www.quitoque.fr/media/cache/blog/f2/a8/49f29afede36618d3754a1c436d4.jpg" 
+                            alt="Fondue with three forks dinping their bread with 2 white wine glasses">
+                        </figure>
+                        <article>
+                            <p>Traditional fondue with melted Gruyère, Vacherin and white wine. Served with homemaid-bread.</p>
+                            <p><span style="color: red;">Min 2 persons </span><i>25 CHF / person</i></p>
+                        </article>
+                    </article>
+                </div>
+                <div class="card">
+                    <article>
+                    <h3><u>Raclette</u></h3>
+                    <figure>
+                        <img 
+                        src="https://cariboumag.com/app/uploads/2022/11/raclette.jpeg" 
+                        alt="Plate with fondue cheese, charcuterie and potatoes">
+                    </figure>
+                    <article>
+                        <p>Swiss cheese melted, served with potatoes and a charcuterie plate including pickles and oignons configs</p>
+                        <p>To drink with, you can choose between white wine or hot tea</p>
+                        <p><span style="color: red;">Min 2 persons </span><i>30 CHF / person</i></p>
+                    </article>
+                </article>
+                </div>
+                <div class="card">
+                    <article>
+                        <h3><u>Röstis</u></h3>
+                        <figure>
+                            <img 
+                            src="https://res.cloudinary.com/swissmilk/image/fetch/ar_16:10,g_auto,w_1944,c_fill,f_auto,q_auto,fl_progressive/https://api.swissmilk.ch/wp-content/uploads/2019/06/roesti-mit-speck-2560x1707.jpg" 
+                            alt="Rostis in a pan with lardons">
+                            <img 
+                            src="https://images.squarespace-cdn.com/content/v1/5ec30182cff13b4331c5384d/e4c9976b-5eab-4fae-b773-476c0669b409/B01E98B7-0068-4D30-9BA0-ACAACE765292.png?format=1000w" 
+                            alt="Rostis in a pan with cream and mushrooms">
+                        </figure>
+                        <article>
+                            <p>Kind of a potato cake. Röstis served with eggs, lardons and cheese.</p>
+                            <p>You can choose the vegetarian option, served with cream and mushrooms</p>
+                            <p>Not vegetarian <i>18 CHF</i><br><span style="color: green;">Vegetarian </span><i>15 CHF</i></p>
+                        </article>
+                    </article>
+                </div>
+            </section>
+        </div>
+        <hr>
+        <div id="order">
+            <section>
+            <h2>Place Your Order</h2>
+            <form>
+                What would you like to order?<br>
+                <label>Fondue: <input type="number" min="0" value="0" max="100"></label><br>
+                <label>Raclette: <input type="number" min="0" value="0" max="100"></label><br>
+                <label>Röstis: <input type="number" min="0" value="0" max="100"></label><br>
+                <label>Vegetarian Röstis: <input type="number" min="0" value="0" max="100"></label><br><br>
+                <b><u>Add-ons:</u></b><br>
+                <label><input type="checkbox" value="Charcuterie"> Charcuterie <i>12 CHF</i></label><br>
+                <label><input type="checkbox" value="Pickles"> Pickles <i>6 CHF</i></label><br>
+                <label><input type="checkbox" value="Oignons configs"> Candied onions <i>6 CHF</i></label><br><br>
+                <label><textarea maxlength="150" rows="6" cols="40" placeholder="Do you have any special requests?"></textarea></label> <br><br>
+                <label><input type="submit" value="Go To Checkout"></label>
+            </form>
+        </section>
+        </div>
+        <br>
+        <hr>
+        <footer>
+            <p>Everything is local, bio and made with love by @tab</p>
+        </footer>
+    </main>
+</body>
+</html>
